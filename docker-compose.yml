@@ -1,0 +1,8 @@
+version: '3'
+services:
+  hello-nginx:
+    build: ./hello-nginx
+    container_name : hello-nginx
+    image: purplepip/hello-nginx
+    ports:
+    - "80:80"

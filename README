@@ -1,1 +1,9 @@
 Try Kubernetes
+
+# TL;DR
+
+    docker-compose build
+
+# Test with Docker compose
+
+    docker-compose up -d --build
