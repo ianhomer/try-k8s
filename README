@@ -2,8 +2,25 @@ Try Kubernetes
 
 # TL;DR
 
+Create docker images
+
     docker-compose build
+
+Apply kubernetes pod
+
+    kubectl apply -f hello-nginx-pod.yaml
+
+Show pods
+
+    kubectl get pods
 
 # Test with Docker compose
 
     docker-compose up -d --build
+
+Convert with kompose
+
+    brew install kompose
+    mkdir build
+    cd build
+    kompose convert -f ../docker-compose.yml
