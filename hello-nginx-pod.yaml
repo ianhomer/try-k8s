@@ -1,10 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: hello-nginx
+  name: hello-nginx-pod
 spec:
   containers:
   - image: purplepip/hello-nginx
-    name: hello-nginx
+    imagePullPolicy: Never
+    name: hello-nginx-ctr
     ports:
     - containerPort: 80
