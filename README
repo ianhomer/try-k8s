@@ -2,9 +2,36 @@ Try Kubernetes
 
 # TL;DR
 
-Create docker images
+Install Docker with Kubernetes and deploy with Docker Stack
 
     docker-compose build
+    docker stack deploy --compose-file docker-compose.yaml hello
+
+View service output at http://localhost/
+
+And show system
+
+    kubectl get pods
+    kubectl get deployment
+    kubectl get service
+
+And clean up
+
+    docker stack rm hello
+
+# Kubernetes
+
+Deploy
+
+    kubectl apply -f hello-deployment.yaml
+    kubectl apply -f hello-service.yaml
+
+# Clean up
+
+    kubectl delete -f hello-nginx-deployment.yaml
+    kubectl delete -f hello-nginx-service.yaml
+
+# Deploying pod
 
 Apply kubernetes pod
 
@@ -14,17 +41,21 @@ Show pods
 
     kubectl get pods
 
-# Clean up
 
-    kubectl delete -f hello-nginx-pod.yaml
+# Docker side of things
 
-# Test with Docker compose
+Build and deploy into Docker desktop
 
     docker-compose up -d --build
 
-Convert with kompose
+Convert with kompose to get an idea of what the kubernetes configuration files
+should look like :
 
     brew install kompose
     mkdir build
     cd build
-    kompose convert -f ../docker-compose.yml
+    kompose convert -f ../docker-compose.yaml
+
+View docker configuration :
+
+    cat ~/.docker/config.json

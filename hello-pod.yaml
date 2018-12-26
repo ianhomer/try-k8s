@@ -5,7 +5,6 @@ metadata:
 spec:
   containers:
   - image: purplepip/hello-nginx
-    imagePullPolicy: Never
     name: hello-nginx-ctr
     ports:
     - containerPort: 80

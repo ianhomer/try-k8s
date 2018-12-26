@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-nginx-deploy
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+        app: hello-nginx
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: hello-nginx
+    spec:
+      containers:
+      - name: hello-nginx-pod
+        image: purplepip/hello-nginx
+        ports:
+        - containerPort: 80
