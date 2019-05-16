@@ -4,7 +4,7 @@ metadata:
   name: hello-nginx-pod
 spec:
   containers:
-  - image: purplepip/hello-nginx
+  - image: purplepip/hello
     name: hello-nginx-ctr
     ports:
     - containerPort: 80

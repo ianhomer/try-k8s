@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: hello-nginx-pod
-        image: purplepip/hello-nginx
+        image: purplepip/hello
         ports:
         - containerPort: 80
