@@ -7,7 +7,7 @@ Try Kubernetes
     minikube start
 
     eval (minikube docker-env) 
-    docker build -t purplepip/hello:v1.1 hello
+    docker build -t purplepip/hello:v1.11 hello
 
     kubectl apply -f hello-deployment.yaml
     kubectl apply -f hello-service.yaml

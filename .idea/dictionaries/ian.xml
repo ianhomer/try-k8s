@@ -4,6 +4,8 @@
       <w>kompose</w>
       <w>kubectl</w>
       <w>minikube</w>
+      <w>nginx</w>
+      <w>secrect</w>
     </words>
   </dictionary>
 </component>
