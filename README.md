@@ -21,9 +21,7 @@ Apply secret, deployment and service
 
 And view system
 
-    kubectl get pods
-    kubectl get deployment
-    kubectl get service
+    kubectl get all 
 
 # Clean up
 
