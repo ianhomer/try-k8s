@@ -7,6 +7,12 @@ Install either [Minikube](MINIKUBE.md) or
 installs k8s in a virtual machine on a separate IP address, so you can 
 install both side-by-side to compare and contrast.
 
+Show contexts and use appropriate one
+
+    kubectl config get-contexts
+    kubectl config use-context docker-for-desktop
+    kubectl config use-context minikube
+    
 Apply secret, deployment and service
 
     kubectl apply -f mock-secret.yaml

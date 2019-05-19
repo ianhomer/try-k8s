@@ -25,7 +25,7 @@ spec:
                 secretKeyRef:
                   name: mock-secret
                   key: my-secret
-          image: purplepip/hello:v1.11
+          image: purplepip/hello:v1.12
           imagePullPolicy: IfNotPresent
           name: hello-nginx
           ports:
