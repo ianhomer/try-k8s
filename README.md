@@ -1,11 +1,16 @@
 Try Kubernetes
 
-# TL;DR
+# tl;dr
 
-Install Docker with Kubernetes and deploy with Docker Stack
+    brew install kubectl
+    brew cask install docker minikube virtualbox
+    minikube start
 
-    docker-compose build
-    docker stack deploy --compose-file docker-compose.yaml hello
+    eval (minikube docker-env) 
+    docker build -t purplepip/hello:v1.1 hello
+
+    kubectl apply -f hello-deployment.yaml
+    kubectl apply -f hello-service.yaml
 
 View service output at http://localhost/
 
@@ -14,10 +19,6 @@ And show system
     kubectl get pods
     kubectl get deployment
     kubectl get service
-
-And clean up
-
-    docker stack rm hello
 
 # Kubernetes
 
@@ -41,7 +42,6 @@ Show pods
 
     kubectl get pods
 
-
 # Docker side of things
 
 Build and deploy into Docker desktop
@@ -59,3 +59,19 @@ should look like :
 View docker configuration :
 
     cat ~/.docker/config.json
+    
+# Creating a secret
+
+Copy 
+
+    echo -n 'mock-secret-value' | base64
+
+into mock-secret.yml and 
+
+    kubectl apply -f ./mock-secret.yaml
+    
+get with
+
+    kubectl get secrets
+    kubectl describe secrets/mock-secret
+    kubectl get secret mock-secret -o yaml
