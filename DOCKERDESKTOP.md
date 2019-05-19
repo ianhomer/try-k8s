@@ -1,8 +1,12 @@
-# Docker side of things
+Try Kubernetes with Docker Desktop
 
-Build and deploy into Docker desktop
+# tl;dr
 
-    docker-compose up -d --build
+Build image
+
+    docker-compose build
+
+# Kompose
 
 Convert with kompose to get an idea of what the kubernetes configuration files
 should look like :

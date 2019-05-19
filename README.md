@@ -2,16 +2,10 @@ Try Kubernetes
 
 # tl;dr
 
-Install
-
-    brew install kubectl
-    brew cask install docker minikube virtualbox
-    minikube start
-
-Building image
-
-    eval (minikube docker-env) 
-    docker build -t purplepip/hello:v1.11 hello
+Install either [Minikube](MINIKUBE.md) or 
+[Docker Desktop](DOCKERDESKTOP.md).  Note that Minikube with VirtualBox 
+installs k8s in a virtual machine on a separate IP address, so you can 
+install both side-by-side to compare and contrast.
 
 Apply secret, deployment and service
 
@@ -19,30 +13,17 @@ Apply secret, deployment and service
     kubectl apply -f hello-deployment.yaml
     kubectl apply -f hello-service.yaml
 
-Open service 
-
-    minikube service hello-nginx
-
-Or view with command line
-
-    curl (minikube service hello-nginx --url)  
-
 And view system
 
     kubectl get pods
     kubectl get deployment
     kubectl get service
 
-# Minikube
-
-Get the IP address minikube is running on
-
-    minikube ip
-
 # Clean up
 
-    kubectl delete -f hello-nginx-deployment.yaml
-    kubectl delete -f hello-nginx-service.yaml
+    kubectl delete -f hello-service.yaml
+    kubectl delete -f hello-deployment.yaml
+    kubectl delete -f mock-secret.yaml
     
 # Creating a secret
 
@@ -58,8 +39,5 @@ get with
 
     kubectl get secrets
     kubectl describe secrets/mock-secret
-    kubectl get secret mock-secret -o yaml
-
-# Thanks
-
-https://gist.github.com/kevin-smets/b91a34cea662d0c523968472a81788f7
+    kubectl get secret mock-secret -o yaml    
+    
