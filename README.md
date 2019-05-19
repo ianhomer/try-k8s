@@ -2,21 +2,32 @@ Try Kubernetes
 
 # tl;dr
 
+Install
+
     brew install kubectl
     brew cask install docker minikube virtualbox
     minikube start
 
+Building image
+
     eval (minikube docker-env) 
     docker build -t purplepip/hello:v1.11 hello
 
+Apply secret, deployment and service
+
+    kubectl apply -f mock-secret.yaml
     kubectl apply -f hello-deployment.yaml
     kubectl apply -f hello-service.yaml
 
+Open service 
+
     minikube service hello-nginx
 
-View service output at http://localhost/
+Or view with command line
 
-And show system
+    curl (minikube service hello-nginx --url)  
+
+And view system
 
     kubectl get pods
     kubectl get deployment
@@ -28,45 +39,10 @@ Get the IP address minikube is running on
 
     minikube ip
 
-# Kubernetes
-
-Deploy
-
-    kubectl apply -f hello-deployment.yaml
-    kubectl apply -f hello-service.yaml
-
 # Clean up
 
     kubectl delete -f hello-nginx-deployment.yaml
     kubectl delete -f hello-nginx-service.yaml
-
-# Deploying pod
-
-Apply kubernetes pod
-
-    kubectl apply -f hello-nginx-pod.yaml
-
-Show pods
-
-    kubectl get pods
-
-# Docker side of things
-
-Build and deploy into Docker desktop
-
-    docker-compose up -d --build
-
-Convert with kompose to get an idea of what the kubernetes configuration files
-should look like :
-
-    brew install kompose
-    mkdir build
-    cd build
-    kompose convert -f ../docker-compose.yaml
-
-View docker configuration :
-
-    cat ~/.docker/config.json
     
 # Creating a secret
 
@@ -76,7 +52,7 @@ Copy
 
 into mock-secret.yml and 
 
-    kubectl apply -f ./mock-secret.yaml
+    kubectl apply -f mock-secret.yaml
     
 get with
 

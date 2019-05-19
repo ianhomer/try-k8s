@@ -10,4 +10,4 @@ spec:
     protocol: TCP
   selector:
     app: hello-nginx
-  type: LoadBalancer
+  type: NodePort
