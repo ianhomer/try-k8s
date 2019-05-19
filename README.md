@@ -12,7 +12,7 @@ Try Kubernetes
     kubectl apply -f hello-deployment.yaml
     kubectl apply -f hello-service.yaml
 
-    curl (minikube service hello-nginx --url) 
+    minikube service hello-nginx
 
 View service output at http://localhost/
 
@@ -21,6 +21,12 @@ And show system
     kubectl get pods
     kubectl get deployment
     kubectl get service
+
+# Minikube
+
+Get the IP address minikube is running on
+
+    minikube ip
 
 # Kubernetes
 
