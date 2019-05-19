@@ -12,6 +12,8 @@ Try Kubernetes
     kubectl apply -f hello-deployment.yaml
     kubectl apply -f hello-service.yaml
 
+    curl (minikube service hello-nginx --url) 
+
 View service output at http://localhost/
 
 And show system
@@ -75,3 +77,7 @@ get with
     kubectl get secrets
     kubectl describe secrets/mock-secret
     kubectl get secret mock-secret -o yaml
+
+# Thanks
+
+https://gist.github.com/kevin-smets/b91a34cea662d0c523968472a81788f7

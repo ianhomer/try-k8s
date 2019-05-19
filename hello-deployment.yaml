@@ -19,14 +19,15 @@ spec:
         app: hello-nginx
     spec:
       containers:
-        - name: hello-nginx-pod
-          image: purplepip/hello:v1.2
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 80
-          env:
+        - env:
             - name: MY_SECRET
               valueFrom:
                 secretKeyRef:
                   name: mock-secret
                   key: my-secret
+          image: purplepip/hello:v1.2
+          imagePullPolicy: IfNotPresent
+          name: hello-nginx
+          ports:
+            - containerPort: 80
+              protocol: TCP
