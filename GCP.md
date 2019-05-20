@@ -30,10 +30,10 @@ gcloud config set compute/region us-west1
 ```
 
 ```
-set -x HELLO_VERSION v1.11
+set -x HELLO_VERSION v1.13
 set -x PROJECT_ID (gcloud config get-value project -q)
-docker build -t gcr.io/$PROJECT_ID/hello:$HELLO_VERSION hello
-docker push gcr.io/$PROJECT_ID/hello:$HELLO_VERSION
+docker build -t gcr.io/$PROJECT_ID/hello-nginx:$HELLO_VERSION hello-nginx
+docker push gcr.io/$PROJECT_ID/hello-nginx:$HELLO_VERSION
 ```
 
 Visit **Container Registry** in your GCP project to see this image in the 
@@ -63,9 +63,13 @@ appropriate_
 
     kubectl apply -f mock-secret.yaml
     kubectl apply -f hello-deployment.yaml
-    kubectl apply -f hello-service.yaml
+    kubectl apply -f hello-service.yaml   
     
 Visit **Kubernetes Engine** in GCP to see your deployment.
+
+Visit service at external IP address from 
+
+    kubectl get service 
 
 # Clean up
 
