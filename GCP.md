@@ -73,7 +73,9 @@ Visit service at external IP address from
 
 # Clean up
 
-    gcloud container clusters delete hello-cluster
+    gcloud container clusters delete hello-cluster --region=us-west1
+
+And, from the GCP console, delete any repository images you no longer need.
 
 # Thanks
 
