@@ -45,3 +45,6 @@ get with
     kubectl describe secrets/mock-secret
     kubectl get secret mock-secret -o yaml    
     
+# Thanks
+
+https://www.katacoda.com
