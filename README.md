@@ -29,14 +29,14 @@ And view system
 
     kubectl get all 
     kubectl get ingress
-    kubectl describe ingress hello-nginx
+    kubectl describe ingress hello-nginx    
 
 # Clean up
 
+    kubectl delete -f hello-ingress.yaml
     kubectl delete -f hello-service.yaml
     kubectl delete -f hello-deployment.yaml
     kubectl delete -f mock-secret.yaml
-    kubectl delete -f hello-ingress.yaml
     
 # Creating a secret
 

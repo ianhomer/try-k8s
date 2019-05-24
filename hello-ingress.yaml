@@ -13,7 +13,7 @@ spec:
     - host: try.k8s.purplepip.com
     - http:
         paths:
-          - path: /
+          - path: /*
             backend:
               serviceName: hello-nginx
               servicePort: 80
