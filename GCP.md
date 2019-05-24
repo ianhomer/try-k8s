@@ -12,6 +12,7 @@ gcloud components install kubectl
 Log in and select project
 
 ```
+gcloud auth login
 gcloud init
 ```
 

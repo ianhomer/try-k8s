@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+    - hosts:
+        - try.k8s.purplepip.com
+      secretName: hello-tls
+  rules:
+    - host: try.k8s.purplepip.com
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: hello-nginx
+              servicePort: 80

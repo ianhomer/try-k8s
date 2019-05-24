@@ -12,22 +12,31 @@ Show contexts and use appropriate one
     kubectl config get-contexts
     kubectl config use-context docker-for-desktop
     kubectl config use-context minikube
-    
+
+Create certificates and apply tls cert and key secret
+
+    ./initialise-keys-and-certificates.sh
+    ./apply-tls-secret.sh
+        
 Apply secret, deployment and service
 
     kubectl apply -f mock-secret.yaml
     kubectl apply -f hello-deployment.yaml
     kubectl apply -f hello-service.yaml
+    kubectl apply -f hello-ingress.yaml
 
 And view system
 
     kubectl get all 
+    kubectl get ingress
+    kubectl describe ingress hello-nginx
 
 # Clean up
 
     kubectl delete -f hello-service.yaml
     kubectl delete -f hello-deployment.yaml
     kubectl delete -f mock-secret.yaml
+    kubectl delete -f hello-ingress.yaml
     
 # Creating a secret
 
@@ -43,7 +52,7 @@ get with
 
     kubectl get secrets
     kubectl describe secrets/mock-secret
-    kubectl get secret mock-secret -o yaml    
+    kubectl get secret mock-secret -o yaml        
     
 # Thanks
 
