@@ -6,7 +6,7 @@ Install
 
     brew install kubectl
     brew cask install docker minikube virtualbox
-    minikube start
+    minikube start --memory=4096
 
 Build image
 
@@ -33,6 +33,12 @@ Get the IP address minikube is running on
 
     minikube ip
 
+Troubleshooting 
+
+    minikube version
+    minikube addons enable heapster 
+    minikube dashboard
+        
 # Clean up minikube
 
     minikube delete

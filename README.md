@@ -36,7 +36,7 @@ And view system
     kubectl delete -f hello-ingress.yaml
     kubectl delete -f hello-service.yaml
     kubectl delete -f hello-deployment.yaml
-    kubectl delete -f mock-secret.yaml
+    kubectl delete -f mock-secret.yaml    
     
 # Creating a secret
 
@@ -53,7 +53,22 @@ get with
     kubectl get secrets
     kubectl describe secrets/mock-secret
     kubectl get secret mock-secret -o yaml        
+
+# Cluster analysis
+
+    kubectl config get-contexts 
+    kubectl describe nodes
+    kubectl get all
+
+Metrics server (TODO : get this working locally)
+
+    helm install stable/metrics-server   
+    kubectl top node
+
+Open port onto a pod
     
+    kubectl port-forward --namespace default $POD_NAME 8080:8080
+        
 # Thanks
 
 https://www.katacoda.com
