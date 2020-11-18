@@ -1,6 +1,6 @@
-Try Kubernetes with Minikube on VirtualBox
+# Try Kubernetes with Minikube on VirtualBox
 
-# tl;dr
+## tl;dr
 
 Install
 
@@ -10,7 +10,7 @@ Install
 
 Build image
 
-    eval (minikube docker-env) 
+    eval (minikube docker-env)
     docker build -t purplepip/hello:v1.11 hello
 
 Apply secret, deployment and service
@@ -25,19 +25,25 @@ Open service in browser
 
 Or view with command line
 
-    curl (minikube service hello-nginx --url)  
+    curl (minikube service hello-nginx --url)
 
-# Minikube
+## Minikube
 
 Get the IP address minikube is running on
 
     minikube ip
 
-# Clean up minikube
+## Troubleshooting
+
+    minikube version
+    minikube addons enable heapster
+    minikube dashboard
+
+## Clean up minikube
 
     minikube delete
     rm -Rf ~/.minikube/
-    
-# Thanks
 
-https://gist.github.com/kevin-smets/b91a34cea662d0c523968472a81788f7
+## Thanks
+
+<https://gist.github.com/kevin-smets/b91a34cea662d0c523968472a81788f7>
