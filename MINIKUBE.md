@@ -6,7 +6,7 @@ Install
 
     brew install kubectl
     brew cask install docker minikube virtualbox
-    minikube start
+    minikube --memory 8192 --cpus 2 start
 
 Build image
 
